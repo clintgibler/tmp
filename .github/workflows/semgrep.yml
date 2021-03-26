@@ -10,3 +10,5 @@ jobs:
         with:
           publishToken: ${{ secrets.SEMGREP_APP_TOKEN }}
           publishDeployment: 76
+        env:
+          SEMGREP_AGENT_OPT_IN_FEATURES: pr-comment-autofix
