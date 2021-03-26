@@ -4,7 +4,8 @@
 # Do not use $_COOKIE to get cookie values
 echo 'Hello ' . htmlspecialchars($wgRequest->getCookie("name")
 ) . '!';
-$email = $_COOKIE["email"];
+$email = $wgRequest->getCookie("email")
+;
 
 // ok: checklist-cookie-fetch
 # Preferred way to get cookie value
