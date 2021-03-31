@@ -331,6 +331,19 @@ def yaml_hammer():
     return render_template('view.html', name = json.dumps(ydata))
 
 
+# BAD: no auth
+# ruleid:flask-unauthenticated-routes
+@app.route('/unauth', methods = ['GET'])
+def unauth():
+    return jsonify({'ok': 'blurb!'}), 200
+
+# BAD: no auth
+# ruleid:flask-unauthenticated-routes
+@app.route('/other_unauth', methods = ['GET', 'POST'])
+def other_unauth():
+    print("Calling other_unauth route")
+    return jsonify({'ok': 'some text'}), 204
+
 
 if __name__ == "__main__":
     http_server = HTTPServer(WSGIContainer(app))
